@@ -1,0 +1,132 @@
+
+public int  checkborder(Point x1) 
+ 	{
+ 		// checks which direction the border is in
+
+ 		if(illegalArea.contains(north(x1)))
+ 			return 1;
+ 		if(illegalArea.contains(south(x1)))
+ 			return 2;
+ 		if(illegalArea.contains(east(x1)))
+ 			return 3;
+ 		else
+ 			return 4;
+ 	}
+ 	public Point updown(Point p)
+ 	{
+ 		Point y;
+ 		north(p);
+ 		y=p;
+ 		south(p);
+ 		y.x=y.x+p.x;
+ 		y.y=y.y+p.y;
+ 		return y;
+ 	}
+
+
+
+
+
+
+
+else if(westandeast(pac)==true){
+		
+		action=PacSurvive.ACTION_UP;
+		System.out.println(" move 0.2 ");
+	}
+
+	else if(checkborder(pac)==1) //if north is blocked move down
+	{
+
+		action=PacSurvive.ACTION_DOWN;
+		System.out.println( "move 1 ");
+
+	}
+	
+	else if(checkborder(pac)==4)
+	{
+		action=PacSurvive.ACTION_RIGHT;
+		System.out.println(" move 0.3 ");
+	}
+
+
+
+
+	System.out.print("("+c+","+d+")");
+
+	action=1;
+
+	if(checkborder(pac)==1) //if north is blocked move down
+	{
+		action=PacSurvive.ACTION_DOWN;
+		System.out.print(" move 1 ");
+
+	}
+	else{
+		
+		action=PacSurvive.ACTION_UP;
+		System.out.print(" move 1.1 ");
+	}		
+			
+	if(checkborder(pac)==3) // if the right is blocked move left
+	{
+		
+		action=PacSurvive.ACTION_LEFT;
+		System.out.print(" move 2 ");
+	
+	}
+	else
+	{
+
+		
+		action=PacSurvive.ACTION_RIGHT;
+		System.out.print(" move 2.1 ");
+	}
+	if(checkborder(pac)==2) //if south is blocked move up
+	{
+		
+		action=PacSurvive.ACTION_UP;
+		System.out.print(" move 3 ");
+	}
+	else{
+		
+		action=PacSurvive.ACTION_DOWN;
+		System.out.print(" move 3.1 ");
+	}
+		
+	if(checkborder(pac)==4) // if west is blocked move right
+	{ 
+	
+		action=PacSurvive.ACTION_RIGHT;
+		System.out.print(" move 4 ");
+	}
+	else{
+		
+		action=PacSurvive.ACTION_LEFT;
+		System.out.print(" move 4.1 ");
+	};
+	if(checkborder(pac)==2 && checkborder(pac)==3 ) //if south && east is blocked move right
+	{
+		
+		action=PacSurvive.ACTION_RIGHT;
+		System.out.print(" move 5 ");
+	}
+	if(checkborder(pac)==1 && checkborder(pac)==3 ) //if north && east is blocked move left
+	{
+		
+		action=PacSurvive.ACTION_LEFT;
+		System.out.print(" move 6 ");
+	}
+	
+	if(checkborder(pac)==4 && checkborder(pac)==2 ) //if south && west is blocked move right
+	{
+		
+		action=PacSurvive.ACTION_UP;
+		System.out.print(" move 7 ");
+	}
+	if(checkborder(pac)==2 &&checkborder(pac)==1) //if south  && north is blocked move up
+	{
+		
+		action=PacSurvive.ACTION_RIGHT;
+		System.out.print(" move 8 ");
+	}

@@ -1,0 +1,3 @@
+//jar cf0 victorMind.jar victorMind.class
+
+how to create a jar file
